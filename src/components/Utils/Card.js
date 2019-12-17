@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styles from './card.module.scss';
 
 const Card = props => {
@@ -13,17 +14,17 @@ const Card = props => {
                 <h3 className={styles.Card__Content_Title}>{title}</h3>
                 <p className={styles.Card__Content_Text}>{text}
                 {info ? (
-                    <a href={info.slug}> Read More</a>
+                    <Link to={info.slug}> Read More</Link>
                 ): null}
                 </p>
-                {gitUrl ? (
+                {projectUrl == '' ? (
                     <div className={styles.Buttons}>
                         <a href={projectUrl}>View Project</a>
                         <a href={gitUrl}>View Github</a>
                     </div>
                 ) : (
                     <div className={styles.Buttons__Center}>
-                        <a href={projectUrl}>View Project</a>
+                        <a href={gitUrl}>View Github</a>
                     </div>
                 )}
             </div>

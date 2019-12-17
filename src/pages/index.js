@@ -5,6 +5,7 @@ import Layout from "../layouts/MainLayout"
 import SEO from "../components/seo"
 import Hero from '../components/Elements/Hero';
 import CardSection from '../components/Elements/CardSection';
+import Button from '../components/Utils/Button';
 
 const IndexPage = () => (
   <Layout>
@@ -16,11 +17,13 @@ const IndexPage = () => (
         <React.Fragment>
           <h2>Browse Projects</h2>
           <CardSection content={data.allProjectsJson.nodes} />
-          <h2>Browse by language</h2>
-          <CardSection content={data.allProjectCatagoriesJson.nodes} />
+          {/**COMING SOON */}
+          {/* <h2>Browse by language</h2>
+          <CardSection content={data.allProjectCatagoriesJson.nodes} /> */}
         </React.Fragment>
       )}
     />
+    <Button text="View All Projects" link="/projects" isLink></Button>
   </Layout>
 )
 
