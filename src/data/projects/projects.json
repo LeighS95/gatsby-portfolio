@@ -23,7 +23,7 @@
         "id": "3",
         "section": "projects",
         "lang": "Javascript / Gatsby",
-        "image": "https://via.placeholder.com/150",
+        "image": "../assets/portfolio.png",
         "title": "Test 3",
         "text": "It is in here but you are already looking at it. But click the 'View Github' button to see how it was made.",
         "projectUrl": "/projects",
