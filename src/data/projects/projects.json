@@ -1,0 +1,52 @@
+[
+    {
+        "id": "1",
+        "section": "projects",
+        "lang": "cpp",
+        "image": "../assets/console.png",
+        "title": "C++ Hangman",
+        "text": "My fist experiment in C++. It is very simple and easy to play!",
+        "projectUrl": "https://github.com/LeighS95/cpp-hangman",
+        "gitUrl": "https://github.com/LeighS95/cpp-hangman"
+    },
+    {
+        "id": "2",
+        "section": "projects",
+        "lang": "Javascript / ReactJs",
+        "image": "../assets/pathfinder.png",
+        "title": "Pathfinder App",
+        "text": "This is a simple pathfinding visualisation app which shows how a dijkstra algorithm sorts through an array of nodes to find the end point and then displays the shortest route.",
+        "projectUrl": "https://leighs95.github.io/pathfinder-algorithm/",
+        "gitUrl": "https://github.com/LeighS95/pathfinder-algorithm"
+    },
+    {
+        "id": "3",
+        "section": "projects",
+        "lang": "Javascript / Gatsby",
+        "image": "https://via.placeholder.com/150",
+        "title": "Test 3",
+        "text": "It is in here but you are already looking at it. But click the 'View Github' button to see how it was made.",
+        "projectUrl": "/projects",
+        "gitUrl": "https://github.com/LeighS95/gatsby-portfolio"
+    },
+    {
+        "id": "4",
+        "section": "projects",
+        "lang": "Full Stack",
+        "image": "../assets/weather.png",
+        "title": "MERN shopping List",
+        "text": "A simple shopping list built using the MERN Stack (MongoBD, Express, React & Node). This is currently not visible",
+        "projectUrl": "https://leighs95.github.io/weather-app/",
+        "gitUrl": "https://github.com/LeighS95/shopping-listhttps://github.com/LeighS95/weather-app"
+    },
+    {
+        "id": "4",
+        "section": "projects",
+        "lang": "Full Stack",
+        "image": "https://www.elegantthemes.com/blog/wp-content/uploads/2015/06/WordPress-Maintenance-Tasks.png",
+        "title": "MERN shopping List",
+        "text": "A simple shopping list built using the MERN Stack (MongoBD, Express, React & Node). ONLY GIT REPO IS CURRENLY AVALIABLE",
+        "projectUrl": "",
+        "gitUrl": "https://github.com/LeighS95/shopping-list"
+    }
+]

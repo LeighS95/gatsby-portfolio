@@ -1,0 +1,43 @@
+.row {
+    margin: 40px 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    h2{
+        color: lightblue;
+    }
+
+    p {
+        line-height: 24px;
+    }
+}
+
+.col {
+    margin-top: 40px;
+    max-width: 60%;
+
+    &:nth-child(2) {
+        text-align: center;
+        width: 40%;
+    }
+
+    ul {
+        list-style: none;
+
+        li{
+            text-align: right;
+            line-height: 24px;
+            font-size: 0.8rem;
+        }
+    }
+}
+
+.name {
+    font-size: 4.236rem;
+}
+
+.refs {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,21 +1,57 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
+import { StaticQuery, graphql } from 'gatsby';
+import '../GlobalStyles/global.scss';
+import Layout from "../layouts/MainLayout"
 import SEO from "../components/seo"
+import Hero from '../components/Elements/Hero';
+import CardSection from '../components/Elements/CardSection';
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Hero />
+    <StaticQuery
+      query={homeQuery}
+      render={data => (
+        <React.Fragment>
+          <h2>Browse Projects</h2>
+          <CardSection content={data.allProjectsJson.nodes} />
+          <h2>Browse by language</h2>
+          <CardSection content={data.allProjectCatagoriesJson.nodes} />
+        </React.Fragment>
+      )}
+    />
   </Layout>
 )
 
-export default IndexPage
+const homeQuery = graphql`
+  query ProjectsQuery {
+    allProjectsJson(limit: 3) {
+      nodes {
+        id
+        gitUrl
+        lang
+        image
+        text
+        section
+        projectUrl
+        title
+        fields {
+          slug
+        }
+      }
+    }
+    allProjectCatagoriesJson {
+      nodes {
+        id
+        image
+        lang
+        projectUrl
+        text
+        title
+      }
+    }
+  }
+`;
+
+export default IndexPage;
