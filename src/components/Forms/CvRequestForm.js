@@ -36,7 +36,7 @@ class CvRequestForm extends Component {
         const data = this.state.user;
 
         async function sendEmail(data) {
-            await fetch('http://localhost:5000/v1/mailer',{
+            await fetch('https://fathomless-springs-03812.herokuapp.com/v1/mailer',{
             method: "POST",
             mode: "cors",
             headers: {
