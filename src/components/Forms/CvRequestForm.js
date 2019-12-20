@@ -11,7 +11,8 @@ class CvRequestForm extends Component {
                 name: '',
                 company: '',
                 email: ''
-            }
+            },
+            msgSent: false
         }
     }
 
@@ -27,46 +28,46 @@ class CvRequestForm extends Component {
                     ...prevState.user, [name]: value
                 }
             }
-        }, () => console.log(this.state.user));
+        });
     }
 
     handleSubmit = e => {
         e.preventDefault();
         const data = this.state.user;
-        const name = data.name;
-        const company = data.company;
-        const email = data.email;
 
-        console.log(name)
-
-        fetch('http://localhost:5000/v1/mailer',{
+        async function sendEmail(data) {
+            await fetch('http://localhost:5000/v1/mailer',{
             method: "POST",
-            mode: "no-cors",
+            mode: "cors",
             headers: {
-                'Accept': 'application/json, text/plain',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify({
-                name,
-                company,
-                email
+                "name": data.name,
+                "company": data.company,
+                "email": data.email
             })
         }).then(res => {
             res.json().then(data => console.log('success' + data))
         });
+        }
+
+        sendEmail(data);
+        
 
         this.setState({
             user: {
                 name: '',
                 company: '',
                 email: ''
-            }
+            },
+            msgSent: true
         });
-
-        console.log(this.state.user)
     }
 
     render() {
+        const { msgSent } = this.state;
         return (
             <div className={styles.Form__Container}>
                 <form onSubmit={this.handleSubmit}>
@@ -78,6 +79,9 @@ class CvRequestForm extends Component {
                     <input name="email" type="email" onChange={this.handleChange} required />
                     <Button text="Request CV" type="submit"></Button>
                 </form>
+                {msgSent ? (
+                    <p style={{margin: '20px', color: 'green'}}>My CV should be sent to your email soon!</p>
+                ) : null}
             </div>
         )
     }

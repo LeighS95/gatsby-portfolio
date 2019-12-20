@@ -83,6 +83,7 @@ class MessageForm extends Component {
                     <label htmlFor="message">Enter your message</label>
                     <textarea name="message"></textarea>
                 </form>
+                <p style={{color: 'red'}}>This service is currently under maintainence and unavaliable</p>
                 <Button type="submit" text="Submit"></Button>
             </div>
         )
