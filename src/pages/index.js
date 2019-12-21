@@ -23,7 +23,7 @@ const IndexPage = () => (
         </React.Fragment>
       )}
     />
-    <Button text="View All Projects" link="/projects" isLink></Button>
+    <Button><a href="projects">View All Projects</a></Button>
   </Layout>
 )
 

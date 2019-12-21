@@ -17,14 +17,14 @@ const Card = props => {
                     <Link to={info.slug}> Read More</Link>
                 ): null}
                 </p>
-                {projectUrl == '' ? (
+                {projectUrl !== '' ? (
                     <div className={styles.Buttons}>
-                        <a href={projectUrl}>View Project</a>
-                        <a href={gitUrl}>View Github</a>
+                        <a href={projectUrl} target="_blank">View Project</a>
+                        <a href={gitUrl} target="_blank">View Github</a>
                     </div>
                 ) : (
                     <div className={styles.Buttons__Center}>
-                        <a href={gitUrl}>View Github</a>
+                        <a href={gitUrl} target="_blank">View Github</a>
                     </div>
                 )}
             </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import PropsTypes from 'prop-types';
 import styles from './button.module.scss';
 
@@ -10,6 +10,7 @@ const Button = props => {
             <button className={styles.Button}>
                 <a href={link} target="_blank" rel="noopener noreferrer">
                     {text}
+                    {props.children}
                 </a>
             </button>
         )
@@ -17,6 +18,7 @@ const Button = props => {
         return (
             <button type={type} className={styles.Button}>
                 {text}
+                {props.children}
             </button>
         )
     }
